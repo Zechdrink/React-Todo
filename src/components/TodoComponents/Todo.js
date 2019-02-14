@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Todo = props => {
-    return <p> {props.todo.task} </p>
+    return <p className = "listed-tasks"> {props.todo.task} </p>
       
 }
 

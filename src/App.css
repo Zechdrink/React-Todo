@@ -1,7 +1,20 @@
 .App {
     width: 500px;
-    border: 1px solid black;
+    border: 5px double black;
     margin: 0 auto;
     margin-top: 50px;
     text-align: center;
+    box-shadow: 0 0 15px black;
+}
+
+.whole-list {
+    text-align: center;
+    font-size: 25px;
+    border: 1px solid black;
+    box-shadow: 0 0 15px black;
+
+}
+
+.form-style {
+    margin: 20px 0px;
 }

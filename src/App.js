@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import TodoList from './components/TodoComponents/TodoList';
+import TodoForm from './components/TodoComponents/TodoForm';
 
 
 
@@ -22,15 +23,28 @@ class App extends React.Component {
     super();
     this.state = {
       todos: todos,
+      newText: '',
     } 
+  };
 
+  handleChanges = event => {;
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   }
+
   //render is a lifecycle method => returns our jsx
   render() {
     return (
       <div className = "App">
           <h1>Stuff To Do</h1>
+
           <TodoList todos = {this.state.todos} />
+
+          <TodoForm 
+            newText = {this.state.newText}
+              handleChanges = {this.handleChanges}
+                />
       </div>
     );
   }
