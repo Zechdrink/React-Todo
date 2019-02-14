@@ -7,12 +7,12 @@ import TodoForm from './components/TodoComponents/TodoForm';
 
 
 const todos = [{
-  task: 'eat',
+  task: 'Eat',
   id: 33,
   complete: false
 },
 {
-  task: 'watch anime',
+  task: 'Watch Anime',
   id: 34,
   complete: false
 }];
@@ -33,6 +33,21 @@ class App extends React.Component {
     });
   }
 
+  addTodo = event => {
+    event.preventDefault();
+    this.setState({
+      todos: [
+        ...this.state.todos, 
+        {
+          task: this.state.newText,
+          id: Date.now(),
+          completed: false
+        }
+      ],
+        newText: ''
+    });
+  };
+
   //render is a lifecycle method => returns our jsx
   render() {
     return (
@@ -44,6 +59,7 @@ class App extends React.Component {
           <TodoForm 
             newText = {this.state.newText}
               handleChanges = {this.handleChanges}
+                addTodo = {this.addTodo}
                 />
       </div>
     );
