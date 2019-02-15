@@ -66,6 +66,13 @@ class App extends React.Component {
     })
   };
 
+  clearCompleted = event => {
+    event.preventDefault();
+    this.setState({
+      todos: this.state.todos.filter(todo => !todo.complete)
+    })
+  }
+
   //render is a lifecycle method => returns our jsx
   render() {
     return (
@@ -81,6 +88,7 @@ class App extends React.Component {
             newText = {this.state.newText}
               handleChanges = {this.handleChanges}
                 addTodo = {this.addTodo}
+                  clearCompleted = {this.clearCompleted}
                 />
       </div>
     );
