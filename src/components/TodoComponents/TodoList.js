@@ -9,7 +9,10 @@ const TodoList = props => {
         <div className = "whole-list">
             {props.todos.map((todo)=> {
                 return (
-                    <Todo todo = {todo} />
+                    <Todo 
+                    todo = {todo}
+                    toggleComplete = {props.toggleComplete}
+                    />
                 );
             })}
         </div>

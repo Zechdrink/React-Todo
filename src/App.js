@@ -48,13 +48,34 @@ class App extends React.Component {
     });
   };
 
+  toggleComplete = (iD) => {
+    //set state
+    //look through todoList and find task clicked on
+    //toggle the completed status for that task
+    this.setState({
+      todos: this.state.todos.map((todo)=>{
+        if(todo.id !== iD){  
+          return todo;
+        } else {
+          return {
+         ...todo,
+          complete: !todo.complete
+          }
+        }
+      })
+    })
+  };
+
   //render is a lifecycle method => returns our jsx
   render() {
     return (
       <div className = "App">
           <h1>Stuff To Do</h1>
 
-          <TodoList todos = {this.state.todos} />
+          <TodoList 
+          todos = {this.state.todos}
+          toggleComplete = {this.toggleComplete}
+          />
 
           <TodoForm 
             newText = {this.state.newText}

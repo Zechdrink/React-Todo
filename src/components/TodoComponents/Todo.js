@@ -1,7 +1,12 @@
 import React from 'react';
 
 const Todo = props => {
-    return <p className = "listed-tasks"> {props.todo.task} </p>
+    return <p 
+    onClick = {()=>props.toggleComplete(props.todo.id)} 
+    className = "listed-tasks"
+    className = {`task${props.todo.complete ? ' completed' : ""}`}
+    > 
+    {props.todo.task} </p>
       
 }
 

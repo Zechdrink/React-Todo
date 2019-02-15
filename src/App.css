@@ -39,3 +39,8 @@ input {
     height: 30px;
     width: 100px;
 }
+
+.task.completed {
+    text-decoration: line-through;
+    background: rgb(73, 72, 72);
+}
